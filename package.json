@@ -6,9 +6,13 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
-    "mongo": "/home/nym/Documents/webd/MongoDB/mongodb/bin/mongod --dbpath=/home/nym/Documents/webd/MongoDB/mongodb-data"
+    "mongo": "/home/nym/Documents/webd/MongoDB/mongodb/bin/mongod --dbpath=/home/nym/Documents/webd/MongoDB/mongodb-data",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
   },
-  "keywords": [], 
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,7 +27,9 @@
     "validator": "^13.5.2"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.7",
-    "env-cmd": "^10.1.0"
+    "supertest": "^6.1.3"
   }
 }
